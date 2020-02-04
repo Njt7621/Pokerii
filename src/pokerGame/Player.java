@@ -1,4 +1,4 @@
-package stu.pokerGame;
+package pokerGame;
 
 import playingCards.Card;
 

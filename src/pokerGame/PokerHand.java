@@ -11,15 +11,19 @@ import playingCards.Suit;
  * @author YOUR NAME HERE
  */
 public class PokerHand implements Comparable< PokerHand > {
-
-    // TODO Add state as needed.
-
+    private Card card1;
+    private Card card2;
+    private Card[] pokerHand;
+    private HandType type;
     /**
      * Initialize a poker hand.
      * @rit.post The hand has no cards
      */
     public PokerHand() {
-        // TODO
+        this.card1 = card1;
+        this.card2 = card2;
+        this.pokerHand = pokerHand;
+        this. type = type;
     }
 
     /**
@@ -30,16 +34,30 @@ public class PokerHand implements Comparable< PokerHand > {
      * @rit.post cards are in sorted order
      */
     public void addCard( Card card ) {
-        // TODO
-    }
+        if (pokerHand[0] == null) {
+            pokerHand[0] = card;
+    }else if (pokerHand[1] == null) {
+        pokerHand[1] = card;
 
+        if(pokerHand[0].getRank() == pokerHand[1].getRank()){
+            type = HandType.TWO_OF_KIND;
+        }
+        else if (pokerHand[0].getSuit() == pokerHand[1].getSuit()){
+            type = HandType.FLUSH;
+        }
+        else:
+            type = HandType.REGULAR;
+    }
+}
     /**
      * What kind of hand is this?
      *
      * @return one of the {@link HandType} designations
      * @rit.pre addCard has been called twice
      */
-    HandType getType() {
+    public HandType getType() {
+
+
         return HandType.REGULAR; // TODO
     }
 
@@ -49,7 +67,7 @@ public class PokerHand implements Comparable< PokerHand > {
      * @return a string containing all the cards in the hand
      */
     public String toString() {
-        return "NYI"; // TODO
+       return pokerHand[0].toString()+ " " + pokerHand[1].toString();
     }
 
     /**
@@ -72,7 +90,16 @@ public class PokerHand implements Comparable< PokerHand > {
      */
     @Override
     public int compareTo( PokerHand other ) {
+        if (handType == )
         return 0; // TODO
     }
 
+    /**
+     * Runs a set of tests on PokerHand class
+     *
+     * @return a string containing all the cards in the hand
+     */
+    public static void main(String[] args) {
+        if
+    }
 }
