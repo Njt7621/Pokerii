@@ -1,17 +1,21 @@
 package pokerGame;
 
 import playingCards.Card;
+import playingCards.Rank;
+import playingCards.Suit;
+
+import java.util.Scanner;
 
 /**
  * An abstract Player for 2-card poker.
  *
- * @author RIT CS
- * @author YOUR NAME HERE
+ * @author njt7621@rit.edu
+ * @author Nikkia Theodule
  */
 
 public abstract class Player implements Comparable< Player > {
-
-    // TODO Add state as needed.
+    private PokerHand userCards;
+    private
 
     /**
      * Initialize a player for 2-card poker.
@@ -33,14 +37,14 @@ public abstract class Player implements Comparable< Player > {
      * @return the number of wins
      */
     public int getWins() {
-        return 0; // TODO
+        return score; // TODO
     }
 
     /**
      * Increment the number of wins for this player.
      */
     public void incrWins() {
-        // TODO
+        wins
     }
 
     /**

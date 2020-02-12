@@ -4,11 +4,13 @@ import playingCards.Card;
 import playingCards.Rank;
 import playingCards.Suit;
 
+import java.util.Scanner;
+
 /**
  * A computer player for 2-card poker
  *
- * @author RIT CS
- * @author YOUR NAME HERE
+ * @author njt7621@rit.edu
+ * @author Nikkia Theodule
  */
 public class Computer extends Player {
 
@@ -24,13 +26,14 @@ public class Computer extends Player {
         MIDLAND_HAND.addCard( new Card( Rank.JACK, Suit.CLUBS ) );
     }
 
-    // TODO Add state as needed.
+    private Card[] pokerHand;
 
     /**
      * Initialize a computer player for 2-card poker
      */
     public Computer() {
-        // TODO
+
+        compCards = new PokerHand();
     }
 
     /**
@@ -43,15 +46,22 @@ public class Computer extends Player {
      * @return true iff the computer wants to stand
      */
     public boolean stand() {
-        return false; // TODO
+        if (this.getType()== HandType.FLUSH || PokerHand.getType()== HandType.TWO_OF_KIND) {
+                return true;
+            } else if (Card[0] == Rank.QUEEN && Card[1]==Rank.JACK ) {
+                return true;
+        }
+        else {
+            return false;
+        }
     }
 
     /**
      * Get a string representing this computerized player
-     * @return all the information in {@link Player#toString()}, plus "Computer"
+     * @return all the information in {Player#toString()}, plus "Computer"
      */
     @Override
     public String toString() {
-        return "NYI"; // TODO
+        return super.toString() + "Computer";
     }
 }
