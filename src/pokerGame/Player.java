@@ -14,14 +14,15 @@ import java.util.Scanner;
  */
 
 public abstract class Player implements Comparable< Player > {
-    private PokerHand userCards;
-    private
+    protected PokerHand pokerhand;
+    private int score;
 
     /**
      * Initialize a player for 2-card poker.
      */
     public Player() {
-        // TODO
+        this.pokerhand = new PokerHand();
+        this.score = 0;
     }
 
     /**
@@ -37,14 +38,14 @@ public abstract class Player implements Comparable< Player > {
      * @return the number of wins
      */
     public int getWins() {
-        return score; // TODO
+        return score;
     }
 
     /**
      * Increment the number of wins for this player.
      */
     public void incrWins() {
-        wins
+        score++;
     }
 
     /**
@@ -53,21 +54,21 @@ public abstract class Player implements Comparable< Player > {
      * @param c the card to add
      */
     public void addCard( Card c ) {
-        // TODO
+        pokerhand.addCard(c);
     }
 
     /**
      * Print the hand in some "nice" format.
      */
     public void printHand() {
-        // TODO
+        System.out.println("Total: " + score + "\n");
     }
 
     /**
      * Clear out all the player's cards.
      */
     public void newHand() {
-        // TODO
+        pokerhand= new PokerHand();
     }
 
     /**

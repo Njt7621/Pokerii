@@ -26,14 +26,10 @@ public class Computer extends Player {
         MIDLAND_HAND.addCard( new Card( Rank.JACK, Suit.CLUBS ) );
     }
 
-    private Card[] pokerHand;
-
     /**
      * Initialize a computer player for 2-card poker
      */
     public Computer() {
-
-        compCards = new PokerHand();
     }
 
     /**
@@ -46,14 +42,10 @@ public class Computer extends Player {
      * @return true iff the computer wants to stand
      */
     public boolean stand() {
-        if (this.getType()== HandType.FLUSH || PokerHand.getType()== HandType.TWO_OF_KIND) {
-                return true;
-            } else if (Card[0] == Rank.QUEEN && Card[1]==Rank.JACK ) {
-                return true;
+        if (this.pokerhand.getType()== HandType.FLUSH || this.pokerhand.getType()== HandType.TWO_OF_KIND) {
+            return true;
         }
-        else {
             return false;
-        }
     }
 
     /**
